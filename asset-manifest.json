@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css",
+    "main.js": "/my-awesome-movie-searcher/static/js/main.a278df3c.chunk.js",
+    "main.js.map": "/my-awesome-movie-searcher/static/js/main.a278df3c.chunk.js.map",
+    "runtime-main.js": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js",
+    "runtime-main.js.map": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js.map",
+    "static/js/2.c5cee01e.chunk.js": "/my-awesome-movie-searcher/static/js/2.c5cee01e.chunk.js",
+    "static/js/2.c5cee01e.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.c5cee01e.chunk.js.map",
+    "index.html": "/my-awesome-movie-searcher/index.html",
+    "precache-manifest.96db93bedae5b657be99529c37a817b1.js": "/my-awesome-movie-searcher/precache-manifest.96db93bedae5b657be99529c37a817b1.js",
+    "service-worker.js": "/my-awesome-movie-searcher/service-worker.js",
+    "static/css/main.69eda509.chunk.css.map": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css.map",
+    "static/js/2.c5cee01e.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.c5cee01e.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8133b171.js",
+    "static/js/2.c5cee01e.chunk.js",
+    "static/css/main.69eda509.chunk.css",
+    "static/js/main.a278df3c.chunk.js"
+  ]
+}
