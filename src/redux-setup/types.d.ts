@@ -1,13 +1,3 @@
-type ItemPropsT = {
-    id?: number;
-    title: string;
-    overview: string;
-    genres: string[];
-    posterPath?: string;
-};
-
-type ListPropsT = { content: ItemPropsT[] };
-
 type MovieT = {
     id: number;
     title: string;
@@ -24,3 +14,9 @@ type MovieT = {
     release_date: string;
     isFav?: boolean;
 };
+
+type RootStoreT = { movies: MovieT[] };
+
+type ActionsT = typeof MOVIE_ADD | typeof MOVIE_DELETE | 'DEFAULT';
+
+type Action<T> = { type: ActionsT; payload: T };
