@@ -10,13 +10,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(
-    rootReducer,
-    compose(
-        applyMiddleware(logger),
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-    )
-);
+const devTools =
+    typeof (window as any).__REDUX_DEVTOOLS_EXTENSION__ === 'undefined'
+        ? (a: any) => a
+        : (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
+
+const store = createStore(rootReducer, compose(applyMiddleware(logger), devTools));
 
 ReactDOM.render(
     <Provider store={store}>
