@@ -1,4 +1,4 @@
-type MovieT = {
+type entranceMovieT = {
     id: number;
     title: string;
     imdb_id: string;
@@ -12,10 +12,28 @@ type MovieT = {
     director: string;
     poster_path: string;
     release_date: string;
+};
+
+type MovieT = {
+    id: number;
+    title: string;
+    imdbId: string;
+    overview: string;
+    genres: string[];
+    revenue: number;
+    duration: number;
+    likes: number;
+    voteAverage: number;
+    voteCount: number;
+    director: string;
+    posterPath: string;
+    releaseDate: string;
     isFav?: boolean;
 };
 
-type RootStoreT = { movies: MovieT[] };
+type MoviesT = Map<number, MovieT>;
+
+type RootStoreT = { movies: MoviesT };
 
 type ActionsT = typeof MOVIE_ADD | typeof MOVIE_DELETE | 'DEFAULT';
 

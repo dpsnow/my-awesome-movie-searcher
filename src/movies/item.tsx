@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     Typography,
@@ -15,6 +15,8 @@ import {
 } from '@material-ui/core';
 
 import { Favorite as FavoriteIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
+import { useDispatch } from 'react-redux';
+import { changeStatusFavorite } from '../redux-setup/actions';
 
 // TODO: разобраться со стилями и вынести жанры в отдельный компонент
 const useStyles = makeStyles({
@@ -25,20 +27,26 @@ const useStyles = makeStyles({
             margin: '2px',
         },
     },
+    expand: {
+        transform: 'rotate(0deg)',
+    },
+    expandOpen: {
+        transform: 'rotate(180deg)',
+    },
 });
 
 export const Item = (props: ItemPropsT) => {
-    const { title, overview, genres, posterPath } = props;
+    const dispatch = useDispatch();
 
+    const { title, overview, genres, posterPath, id, isFav } = props;
     const [expanded, setExpanded] = useState(false);
-    const [isFavorite, setFavorite] = useState(false);
 
     const onClickBtnExpand = () => {
         setExpanded(!expanded);
     };
 
     const onClickBtnFavorite = () => {
-        setFavorite(!isFavorite);
+        dispatch(changeStatusFavorite(id));
     };
 
     // при выносе из компонента получаю ошибку Error: Invalid hook call.
@@ -57,10 +65,14 @@ export const Item = (props: ItemPropsT) => {
                 </Box>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
+                <IconButton onClick={onClickBtnFavorite} color={isFav ? 'secondary' : 'default'}>
                     <FavoriteIcon />
                 </IconButton>
-                <IconButton onClick={onClickBtnExpand} style={{ marginLeft: 'auto' }}>
+                <IconButton
+                    className={expanded ? classes.expandOpen : classes.expand}
+                    onClick={onClickBtnExpand}
+                    style={{ marginLeft: 'auto' }}
+                >
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>
