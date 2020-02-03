@@ -1,12 +1,14 @@
 import React from 'react';
 import { List as Movies } from './movies/list';
 
-import dataMovies from './mocks/movies';
+import { Container } from '@material-ui/core';
 
 const App: React.FC = () => {
     return (
         <div className='App'>
-            <Movies content={dataMovies} />
+            <Container maxWidth='md'>
+                <Movies />
+            </Container>
         </div>
     );
 };

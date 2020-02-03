@@ -1,7 +1,25 @@
 type ItemPropsT = {
-    id?: number; // Property 'id' is missing in type '{ key: number; title: string; overview: string; }' but required in type 'ItemPropsT'.
+    id?: number;
     title: string;
     overview: string;
+    genres: string[];
+    posterPath?: string;
 };
 
 type ListPropsT = { content: ItemPropsT[] };
+
+type MovieInpitDataT = {
+    id: number;
+    title: string;
+    imdb_id: string;
+    overview: string;
+    genres: string[];
+    revenue: number;
+    duration: number;
+    likes: number;
+    vote_average: number;
+    vote_count: number;
+    director: string;
+    poster_path: string;
+    release_date: string;
+};
