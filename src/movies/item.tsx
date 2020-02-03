@@ -54,7 +54,7 @@ export const Item = (props: ItemPropsT) => {
 
     return (
         <Card>
-            <CardMedia style={{ height: '300px' }} image={`https://devlab.website/${posterPath}`} />
+            <CardMedia style={{ height: '400px' }} image={`https://devlab.website/${posterPath}`} />
             <CardHeader title={title} titleTypographyProps={{ align: 'center' }} />
             <Divider variant='middle' />
             <CardContent>
