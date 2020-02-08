@@ -1,11 +1,12 @@
-import { FETCH_MOVIES, SET_FAV_MOVIE } from './action-types';
-import { fetchMovies, changeFavoriteMovie } from './handlers';
+import { FETCH_MOVIES, SET_FAV_MOVIE, ADD_SEARCH } from './action-types';
+import { fetchMovies, changeFavoriteMovie, addSearchValues } from './handlers';
 
-const initState: RootStoreT = { movies: new Map() };
+const initState: RootStoreT = { movies: new Map(), search: { values: { genre: '', text: '' } } };
 
 const actionHandler = new Map<string, any>([
     [FETCH_MOVIES, fetchMovies],
     [SET_FAV_MOVIE, changeFavoriteMovie],
+    [ADD_SEARCH, addSearchValues],
     ['DEFAULT', () => initState],
 ]);
 

@@ -6,4 +6,4 @@ const getGenres = (state: any) => {
     return Array.from(genress.values());
 };
 
-export const genresSelector = createSelector(getGenres, list => list);
+export const selectGenres = createSelector(getGenres, list => list);

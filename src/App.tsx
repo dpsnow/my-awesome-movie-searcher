@@ -1,9 +1,8 @@
 import React from 'react';
-import { List as Movies } from './movies/list';
+import { Movies } from './movies';
 
 import { Container } from '@material-ui/core';
-import { Header } from './header';
-import { Footer } from './footer/footer';
+import { Footer, Header } from './components';
 
 const App: React.FC = () => {
     return (

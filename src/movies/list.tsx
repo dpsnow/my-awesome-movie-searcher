@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
-import { Item } from './item';
 import { Typography, Grid } from '@material-ui/core';
-import * as api from '../api';
 import { useDispatch, useSelector } from 'react-redux';
 
+import * as api from '../api';
 import { getAllMovies } from '../redux-setup';
+import { selectDesiredMovies } from './selectors';
+
+import { Item } from './item';
 
 export const List = () => {
     const dispatch = useDispatch();
 
-    const allMovies = useSelector<RootStoreT, any>(store => store.movies);
+    // const allMovies = useSelector<RootStoreT, any>(store => store.movies);
+    const allMovies = useSelector<RootStoreT, any>(selectDesiredMovies);
 
     useEffect(() => {
         api.allMovies().then((movies: MoviesT) => {

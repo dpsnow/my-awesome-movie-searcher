@@ -33,8 +33,17 @@ type MovieT = {
 
 type MoviesT = Map<number, MovieT>;
 
-type RootStoreT = { movies: MoviesT };
+type MoviesStoreT = MoviesT;
 
-type ActionsT = typeof MOVIE_ADD | typeof MOVIE_DELETE | 'DEFAULT';
+type RootStoreT = {
+    movies: MoviesStoreT;
+    search: {
+        values: {
+            genre;
+            text;
+        };
+        last?: string[];
+    };
+};
 
 type Action<T> = { type: ActionsT; payload: T };
