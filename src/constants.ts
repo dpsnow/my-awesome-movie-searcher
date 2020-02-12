@@ -1,1 +1,0 @@
-export const MOVIES_URL:string = 'https://devlab.website/v1/movies';

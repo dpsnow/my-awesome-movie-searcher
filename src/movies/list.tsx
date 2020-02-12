@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Typography, Grid } from '@material-ui/core';
+import { fetchMovies } from '../api';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as api from '../api';
@@ -11,11 +12,10 @@ import { Item } from './item';
 export const List = () => {
     const dispatch = useDispatch();
 
-    // const allMovies = useSelector<RootStoreT, any>(store => store.movies);
-    const allMovies = useSelector<RootStoreT, any>(selectDesiredMovies);
+    const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(store => store.movies);
 
     useEffect(() => {
-        api.allMovies().then((movies: MoviesT) => {
+        fetchMovies().then((movies: MoviesT) => {
             dispatch(getAllMovies(movies));
         });
     }, [dispatch]);
@@ -27,7 +27,7 @@ export const List = () => {
             </Typography>
             <Grid container alignItems='stretch' spacing={1}>
                 {allMovies &&
-                    [...allMovies.values()].map((item: MovieT) => {
+                    Array.from(allMovies.values()).map((item: MovieT) => {
                         return (
                             <Grid item xs={12} sm={6} md={4} key={item.id}>
                                 {/* TODO: исправить септку после стилизации под макет */}
