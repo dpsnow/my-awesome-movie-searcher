@@ -9,7 +9,7 @@ export const changeFavoriteMovie = (state: RootStoreT, action: { payload: number
     const movies = new Map(state.movies);
     const targetMovie = movies.get(action.payload);
     if (targetMovie) {
-        targetMovie.isFav = !targetMovie.isFav;
+        targetMovie.isFavorite = !targetMovie.isFavorite;
         movies.set(action.payload, targetMovie);
     }
     return { ...state, movies };

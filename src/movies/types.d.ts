@@ -4,7 +4,7 @@ type ItemPropsT = {
     overview: string;
     genres: string[];
     posterPath?: string;
-    isFav?: boolean;
+    isFavorite?: boolean;
 };
 
 type ListPropsT = { content: ItemPropsT[] };

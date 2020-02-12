@@ -12,6 +12,7 @@ type entranceMovieT = {
     director: string;
     poster_path: string;
     release_date: string;
+    moderated: boolean;
 };
 
 type MovieT = {
@@ -28,7 +29,7 @@ type MovieT = {
     director: string;
     posterPath: string;
     releaseDate: string;
-    isFav?: boolean;
+    isFavorite?: boolean;
 };
 
 type MoviesT = Map<number, MovieT>;
