@@ -3,23 +3,22 @@ import { Typography, Grid } from '@material-ui/core';
 import { fetchMovies } from '../api';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getAllMovies } from '../redux-setup';
+// import { getAllMovies } from '../redux-setup';
 import { selectDesiredMovies } from './selectors';
 
 import { Item } from './item';
 
 export const List = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     // const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(store => store.movies);
-    const allMovies = useSelector<RootStoreT, any>(selectDesiredMovies);
+    const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(selectDesiredMovies);
 
-    console.log(allMovies);
-    useEffect(() => {
-        fetchMovies().then((movies: MoviesT) => {
-            dispatch(getAllMovies(movies));
-        });
-    }, [dispatch]);
+    // useEffect(() => {
+    //     fetchMovies().then((movies: MoviesT) => {
+    //         dispatch(getAllMovies(movies));
+    //     });
+    // }, [dispatch]);
 
     return (
         <>
