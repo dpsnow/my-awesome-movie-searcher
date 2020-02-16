@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Typography, Grid } from '@material-ui/core';
-import { fetchMovies } from '../api';
+// import { fetchMovies } from '../api';
 import { useDispatch, useSelector } from 'react-redux';
 
 // import { getAllMovies } from '../redux-setup';
