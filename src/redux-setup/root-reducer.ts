@@ -1,5 +1,12 @@
-import { FETCH_MOVIES, SET_FAV_MOVIE, ADD_SEARCH, FETCH_USER } from './action-types';
-import { fetchMovies, changeFavoriteMovie, addSearchValues, fetchUser } from './handlers';
+import {
+    MOUNT_MOVIES,
+    CHANGE_FAV_MOVIE_STATUS,
+    ADD_SEARCH,
+    MOUNT_USER_DATA,
+    SET_FAV_MOVIE_SAGA,
+    CHANGE_MOVES_USER,
+} from './action-types';
+import { mountMovies, changeFavoriteMovie, addSearchValues, mountUserData, changeUsersMovies } from './handlers';
 
 const initState: RootStoreT = {
     movies: new Map(),
@@ -13,14 +20,23 @@ const initState: RootStoreT = {
 };
 
 const actionHandler = new Map<string, any>([
-    [FETCH_MOVIES, fetchMovies],
-    [SET_FAV_MOVIE, changeFavoriteMovie],
+    [MOUNT_MOVIES, mountMovies],
+    [CHANGE_FAV_MOVIE_STATUS, changeFavoriteMovie],
+    [CHANGE_MOVES_USER, changeUsersMovies],
     [ADD_SEARCH, addSearchValues],
-    [FETCH_USER, fetchUser],
-    ['DEFAULT', () => initState],
+    [MOUNT_USER_DATA, mountUserData],
+    [
+        'DEFAULT',
+        (state: RootStoreT) => {
+            console.log('reducer DEFAULT');
+            return { ...state };
+            // return initState;
+        },
+    ],
 ]);
 
 export function rootReducer(state = initState, action: Action<any>) {
+    console.log('rootReducer: action', action.type);
     const reducer = actionHandler.has(action.type) ? actionHandler.get(action.type) : actionHandler.get('DEFAULT');
     return reducer(state, action);
 }

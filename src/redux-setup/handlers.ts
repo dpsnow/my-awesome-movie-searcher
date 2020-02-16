@@ -1,18 +1,67 @@
-export const fetchMovies = (state: RootStoreT, action: { payload: MoviesT }) => {
+export const mountMovies = (state: RootStoreT, action: { payload: MoviesT }) => {
     return {
         ...state,
         movies: action.payload,
     };
 };
 
+/*export const changeFavoriteMovie = (
+    state: RootStoreT,
+    action: {
+        payload: { id: number; currentStatus: boolean };
+    }
+) => {
+    // console.log('redux: payload', action);
+
+    const movies = new Map(state.movies);
+    const targetMovie = movies.get(action.payload.id);
+
+    // console.log('redux: changeFavoriteMovie', movies);
+    // console.log('redux: changeFavoriteMovie', targetMovie);
+    if (targetMovie) {
+        // targetMovie.likes = targetMovie.likes === 0 ? 1 : 0;
+        targetMovie.isFavorite = !targetMovie.isFavorite;
+        movies.set(action.payload.id, targetMovie);
+    }
+
+    return { ...state, movies };
+    
+    // const movies = new Map(state.movies);
+    // const targetMovie = movies.get(action.payload);
+    // if (targetMovie) {
+    //     targetMovie.isFavorite = !targetMovie.isFavorite;
+    //     movies.set(action.payload, targetMovie);
+    // }
+    // return { ...state, movies };
+};*/
+
 export const changeFavoriteMovie = (state: RootStoreT, action: { payload: number }) => {
+    console.log('changeFavoriteMovie');
     const movies = new Map(state.movies);
     const targetMovie = movies.get(action.payload);
+
     if (targetMovie) {
         targetMovie.isFavorite = !targetMovie.isFavorite;
         movies.set(action.payload, targetMovie);
     }
+    console.log(targetMovie);
+
     return { ...state, movies };
+};
+
+export const changeUsersMovies = (state: RootStoreT, action: { payload: number }) => {
+    console.log('changeUsersMovies');
+    const idMovie: any = action.payload;
+    const user = state.user;
+    const ind = user.likes && user.likes.indexOf(idMovie);
+    console.log(ind);
+    if (ind !== -1) {
+        user.likes.splice(ind, 1);
+    } else {
+        user.likes.push(idMovie);
+    }
+
+    return { ...state, user };
 };
 
 export const addSearchValues = (state: RootStoreT, action: { payload: { genre: string; text: string } }) => {
@@ -34,7 +83,7 @@ export const addSearchValues = (state: RootStoreT, action: { payload: { genre: s
     };
 };
 
-export const fetchUser = (state: RootStoreT, action: { payload: {} }) => {
+export const mountUserData = (state: RootStoreT, action: { payload: {} }) => {
     return {
         ...state,
         user: action.payload,
