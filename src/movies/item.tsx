@@ -15,8 +15,8 @@ import {
 } from '@material-ui/core';
 
 import { Favorite as FavoriteIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
-import { useDispatch } from 'react-redux';
-import { changeStatusFavorite } from '../redux-setup/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleStatusFavorite } from '../redux-setup/actions';
 import { BASE_URL } from '../api/constants';
 
 // TODO: разобраться со стилями и вынести жанры в отдельный компонент
@@ -36,18 +36,30 @@ const useStyles = makeStyles({
     },
 });
 
+// const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
+
 export const Item = (props: ItemPropsT) => {
     const dispatch = useDispatch();
 
     const { title, overview, genres, posterPath, id, isFavorite } = props;
     const [expanded, setExpanded] = useState(false);
 
+    const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
+    console.log(favoriteMovies);
+    const isFav = favoriteMovies && favoriteMovies.includes(id);
+    console.log(isFav);
+
     const onClickBtnExpand = () => {
         setExpanded(!expanded);
     };
 
     const onClickBtnFavorite = () => {
-        dispatch(changeStatusFavorite(id));
+        dispatch(toggleStatusFavorite(id, Boolean(isFav)));
+
+        // //  TODO: отправить запрос, дождаться ответа, обновить инфу о файле
+        // // ?: что будет с реселектом, на фильмы которые в избранном
+        // console.log('onClickBtnFavorite', id, likes);
+        // dispatch(changeStatusFavorite(id, Boolean(likes === 0)));
     };
 
     // при выносе из компонента получаю ошибку Error: Invalid hook call.
@@ -66,8 +78,11 @@ export const Item = (props: ItemPropsT) => {
                 </Box>
             </CardContent>
             <CardActions disableSpacing>
-                <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
+                {/* <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
                     <FavoriteIcon />
+                </IconButton> */}
+                <IconButton onClick={onClickBtnFavorite} color={isFav ? 'secondary' : 'default'}>
+                    <FavoriteIcon /> от user.likes
                 </IconButton>
                 <IconButton
                     className={expanded ? classes.expandOpen : classes.expand}
