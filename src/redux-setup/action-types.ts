@@ -1,0 +1,2 @@
+export const FETCH_MOVIES = '@@APP/ROOT/FETCH_MOVIES';
+export const SET_FAV_MOVIE = '@@APP/ROOT/SET_FAV_MOVIE';
