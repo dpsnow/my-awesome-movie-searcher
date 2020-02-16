@@ -1,3 +1,5 @@
 export const FETCH_MOVIES = '@@APP/ROOT/FETCH_MOVIES';
 export const SET_FAV_MOVIE = '@@APP/ROOT/SET_FAV_MOVIE';
 export const ADD_SEARCH = '@@APP/ROOT/ADD_SEARCH';
+
+export const FETCH_USER = '@@APP/ROOT/FETCH_USER';

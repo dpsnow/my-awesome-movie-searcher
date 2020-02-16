@@ -33,3 +33,10 @@ export const addSearchValues = (state: RootStoreT, action: { payload: { genre: s
         },
     };
 };
+
+export const fetchUser = (state: RootStoreT, action: { payload: {} }) => {
+    return {
+        ...state,
+        user: action.payload,
+    };
+};

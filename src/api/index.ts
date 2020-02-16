@@ -1,1 +1,2 @@
-export { fetchMovies } from './fetch-movies';
+export { apiMovies } from './movies';
+export { apiUser } from './user';
