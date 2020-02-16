@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css",
-    "main.js": "/my-awesome-movie-searcher/static/js/main.46e1142a.chunk.js",
-    "main.js.map": "/my-awesome-movie-searcher/static/js/main.46e1142a.chunk.js.map",
+    "main.js": "/my-awesome-movie-searcher/static/js/main.bc5afaa5.chunk.js",
+    "main.js.map": "/my-awesome-movie-searcher/static/js/main.bc5afaa5.chunk.js.map",
     "runtime-main.js": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js",
     "runtime-main.js.map": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js.map",
     "static/js/2.14edef6a.chunk.js": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js",
     "static/js/2.14edef6a.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js.map",
     "index.html": "/my-awesome-movie-searcher/index.html",
-    "precache-manifest.7309321e3b905aa6061c4237aef471eb.js": "/my-awesome-movie-searcher/precache-manifest.7309321e3b905aa6061c4237aef471eb.js",
+    "precache-manifest.ab837d64206ba31ad56224c3ec51d5b2.js": "/my-awesome-movie-searcher/precache-manifest.ab837d64206ba31ad56224c3ec51d5b2.js",
     "service-worker.js": "/my-awesome-movie-searcher/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css.map",
     "static/js/2.14edef6a.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8133b171.js",
     "static/js/2.14edef6a.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.46e1142a.chunk.js"
+    "static/js/main.bc5afaa5.chunk.js"
   ]
 }
