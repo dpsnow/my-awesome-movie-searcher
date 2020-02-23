@@ -12,6 +12,7 @@ import {
     IconButton,
     makeStyles,
     Collapse,
+    Link,
 } from '@material-ui/core';
 
 import { Favorite as FavoriteIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
@@ -41,20 +42,18 @@ const useStyles = makeStyles({
 export const Item = (props: ItemPropsT) => {
     const dispatch = useDispatch();
 
-    const { title, overview, genres, posterPath, id, isFavorite } = props;
-    const [expanded, setExpanded] = useState(false);
+    const { title, overview, posterPath, id } = props;
+    // const [expanded, setExpanded] = useState(false);
 
     const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
-    console.log(favoriteMovies);
-    const isFav = favoriteMovies && favoriteMovies.includes(id);
-    console.log(isFav);
+    const isFavorite = favoriteMovies && favoriteMovies.includes(id);
 
-    const onClickBtnExpand = () => {
-        setExpanded(!expanded);
-    };
+    // const onClickBtnExpand = () => {
+    //     setExpanded(!expanded);
+    // };
 
     const onClickBtnFavorite = () => {
-        dispatch(toggleStatusFavorite(id, Boolean(isFav)));
+        dispatch(toggleStatusFavorite(id, Boolean(isFavorite)));
 
         // //  TODO: отправить запрос, дождаться ответа, обновить инфу о файле
         // // ?: что будет с реселектом, на фильмы которые в избранном
@@ -63,41 +62,40 @@ export const Item = (props: ItemPropsT) => {
     };
 
     // при выносе из компонента получаю ошибку Error: Invalid hook call.
-    const classes = useStyles();
+    // const classes = useStyles();
 
     return (
         <Card>
-            <CardMedia style={{ height: '400px' }} image={`${BASE_URL}${posterPath}`} />
-            <CardHeader title={title} titleTypographyProps={{ align: 'center' }} />
+            <CardMedia style={{ height: '250px' }} image={`${BASE_URL}${posterPath}`} />
+            {/* <CardHeader title={title} titleTypographyProps={{ align: 'center' }} /> */}
             <Divider variant='middle' />
-            <CardContent>
+            {/* <CardContent>
                 <Box className={classes.root}>
                     {genres.map((genre: string) => {
                         return <Chip variant='outlined' key={genre} size='small' label={genre} />;
                     })}
                 </Box>
-            </CardContent>
+            </CardContent> */}
             <CardActions disableSpacing>
-                {/* <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
+                <Link href='#'>More info</Link>
+
+                <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
                     <FavoriteIcon />
-                </IconButton> */}
-                <IconButton onClick={onClickBtnFavorite} color={isFav ? 'secondary' : 'default'}>
-                    <FavoriteIcon /> от user.likes
                 </IconButton>
-                <IconButton
+                {/* <IconButton
                     className={expanded ? classes.expandOpen : classes.expand}
                     onClick={onClickBtnExpand}
                     style={{ marginLeft: 'auto' }}
                 >
                     <ExpandMoreIcon />
-                </IconButton>
+                </IconButton> */}
             </CardActions>
-            <Collapse in={expanded} timeout='auto' unmountOnExit>
+            {/* <Collapse in={expanded} timeout='auto' unmountOnExit>
                 <CardContent>
                     <Typography paragraph>Overview:</Typography>
                     <Typography paragraph>{overview}</Typography>
                 </CardContent>
-            </Collapse>
+            </Collapse> */}
         </Card>
     );
 };

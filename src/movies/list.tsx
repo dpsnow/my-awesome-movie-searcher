@@ -16,9 +16,10 @@ export const List = () => {
                 {allMovies &&
                     Array.from(allMovies.values()).map((item: any) => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} key={item.id}>
+                            <Grid item xs={6} sm={3} md={2} key={item.id}>
                                 {/* TODO: исправить септку после стилизации под макет */}
                                 {/* <Grid item xs={6} sm={3} md={2} key={item.id}> */}
+                                {/* <Grid item xs={12} sm={6} md={4} key={item.id}> */}
                                 <Item {...item} />
                             </Grid>
                         );
