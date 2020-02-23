@@ -3,10 +3,14 @@ import { TOKEN } from './constants';
 const snakeToCamel = (str: string) => (str.includes('_') ? str.replace(/([-_]\w)/g, g => g[1].toUpperCase()) : str);
 
 export function convertInputMovie(entranceMovie: entranceMovieT): [number, {}] {
-    const newMovie: {} = Object.entries(entranceMovie).reduce(
+    const newMovie: MovieT | any = Object.entries(entranceMovie).reduce(
         (acc, [key, val]) => ({ ...acc, [snakeToCamel(key)]: val }),
         {}
     );
+
+    // FIX: ""genres""
+    const unicGenres = new Set(newMovie.genres);
+    newMovie.genres = Array.from(unicGenres).map((it: any) => it.replace(/"/g, ''));
     return [entranceMovie.id, newMovie];
 }
 
