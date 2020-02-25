@@ -25,6 +25,7 @@ export const UserPanel = () => {
                 {userName}
             </Button>
             <Menu id='user-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
+                {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>Settings</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
