@@ -13,10 +13,6 @@ import * as serviceWorker from './serviceWorker';
 
 import { rootReducer } from './redux-setup/root-reducer';
 
-// import { searchReducer } from './search-panel';
-// import { moviesReducer } from './redux-setup';
-// const r00tReducer = combineReducers({ movies: moviesReducer, search: searchReducer });
-
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)));
 
 ReactDOM.render(

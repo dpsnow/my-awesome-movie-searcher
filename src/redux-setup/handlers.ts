@@ -1,4 +1,4 @@
-export const fetchMovies = (state: RootStoreT, action: { payload: MoviesT }) => {
+export const mountMovies = (state: RootStoreT, action: { payload: MoviesT }) => {
     return {
         ...state,
         movies: action.payload,
