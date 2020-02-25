@@ -1,21 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { applyMiddleware, createStore, compose } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { rootReducer } from './redux-setup/root-reducer';
+
 import logger from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const devTools =
-    typeof (window as any).__REDUX_DEVTOOLS_EXTENSION__ === 'undefined'
-        ? (a: any) => a
-        : (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
+import { rootReducer } from './redux-setup/root-reducer';
 
-const store = createStore(rootReducer, compose(applyMiddleware(logger), devTools));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(logger)));
 
 ReactDOM.render(
     <Provider store={store}>

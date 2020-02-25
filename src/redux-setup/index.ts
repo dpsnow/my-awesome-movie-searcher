@@ -1,2 +1,2 @@
 export { rootReducer } from './root-reducer';
-export { getAllMovies } from './actions';
+export { getAllMovies, changeStatusFavorite } from './actions';
