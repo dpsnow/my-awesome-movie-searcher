@@ -12,8 +12,8 @@ import {
     IconButton,
     makeStyles,
     Collapse,
-    Link,
 } from '@material-ui/core';
+import { Link, useParams } from 'react-router-dom';
 
 import { Favorite as FavoriteIcon, ExpandMore as ExpandMoreIcon } from '@material-ui/icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -77,7 +77,7 @@ export const Item = (props: ItemPropsT) => {
                 </Box>
             </CardContent> */}
             <CardActions disableSpacing>
-                <Link href='#'>More info</Link>
+                <Link to={`/movie/${id}`}>More info</Link>
 
                 <IconButton onClick={onClickBtnFavorite} color={isFavorite ? 'secondary' : 'default'}>
                     <FavoriteIcon />
