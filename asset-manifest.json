@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css",
-    "main.js": "/my-awesome-movie-searcher/static/js/main.bc5afaa5.chunk.js",
-    "main.js.map": "/my-awesome-movie-searcher/static/js/main.bc5afaa5.chunk.js.map",
+    "main.js": "/my-awesome-movie-searcher/static/js/main.9b21abdf.chunk.js",
+    "main.js.map": "/my-awesome-movie-searcher/static/js/main.9b21abdf.chunk.js.map",
     "runtime-main.js": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js",
     "runtime-main.js.map": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js.map",
-    "static/js/2.14edef6a.chunk.js": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js",
-    "static/js/2.14edef6a.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js.map",
+    "static/js/2.96644b31.chunk.js": "/my-awesome-movie-searcher/static/js/2.96644b31.chunk.js",
+    "static/js/2.96644b31.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.96644b31.chunk.js.map",
     "index.html": "/my-awesome-movie-searcher/index.html",
-    "precache-manifest.ab837d64206ba31ad56224c3ec51d5b2.js": "/my-awesome-movie-searcher/precache-manifest.ab837d64206ba31ad56224c3ec51d5b2.js",
+    "precache-manifest.23d4f367eb6700abd76fa02c1f60893b.js": "/my-awesome-movie-searcher/precache-manifest.23d4f367eb6700abd76fa02c1f60893b.js",
     "service-worker.js": "/my-awesome-movie-searcher/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.14edef6a.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js.LICENSE"
+    "static/js/2.96644b31.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.96644b31.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.8133b171.js",
-    "static/js/2.14edef6a.chunk.js",
+    "static/js/2.96644b31.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.bc5afaa5.chunk.js"
+    "static/js/main.9b21abdf.chunk.js"
   ]
 }

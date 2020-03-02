@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f6168eac2b495caa56d483898416d4c7",
+    "revision": "fcb464c9048d1450194ae1ca6e36bc2e",
     "url": "/my-awesome-movie-searcher/index.html"
   },
   {
-    "revision": "1199ff36bb2857172400",
+    "revision": "c78c42686f19102d242d",
     "url": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css"
   },
   {
-    "revision": "0ed705ddf8e37efac134",
-    "url": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js"
+    "revision": "2604339d5b3e36213871",
+    "url": "/my-awesome-movie-searcher/static/js/2.96644b31.chunk.js"
   },
   {
     "revision": "b51e62edbcf7a9c4f4ad13f506021d3e",
-    "url": "/my-awesome-movie-searcher/static/js/2.14edef6a.chunk.js.LICENSE"
+    "url": "/my-awesome-movie-searcher/static/js/2.96644b31.chunk.js.LICENSE"
   },
   {
-    "revision": "1199ff36bb2857172400",
-    "url": "/my-awesome-movie-searcher/static/js/main.bc5afaa5.chunk.js"
+    "revision": "c78c42686f19102d242d",
+    "url": "/my-awesome-movie-searcher/static/js/main.9b21abdf.chunk.js"
   },
   {
     "revision": "9a7b8b2fed221a158ac5",
