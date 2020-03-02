@@ -7,25 +7,25 @@ const load = () =>
         return new Map(movies);
     });
 
-const addLike = (id: number) =>
-    createRequest(`${MOVIE_URL}${id}/like`, 'POST').then((res: { type: string }) => {
-        // console.log(res);
-        // if (res.type === 'success') {
-        //     return res;
-        // } else {
-        //     throw Error('err');
-        // }
-    });
+const addLike = (id: number) => createRequest(`${MOVIE_URL}${id}/like`, 'POST');
+// .then((res: { type: string }) => {
+// console.log(res);
+// if (res.type === 'success') {
+//     return res;
+// } else {
+//     throw Error('err');
+// }
+// });
 
-const removeLike = (id: number) =>
-    createRequest(`${MOVIE_URL}${id}/like`, 'DELETE').then((res: { type: string }) => {
-        // console.log(res);
-        // if (res.type === 'success') {
-        //     return res;
-        // } else {
-        //     throw Error('err');
-        // }
-    });
+const removeLike = (id: number) => createRequest(`${MOVIE_URL}${id}/like`, 'DELETE');
+// .then((res: { type: string }) => {
+// console.log(res);
+// if (res.type === 'success') {
+//     return res;
+// } else {
+//     throw Error('err');
+// }
+// });
 
 export const apiMovies = {
     load,

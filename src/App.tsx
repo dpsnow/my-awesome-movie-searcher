@@ -24,6 +24,7 @@ import { UserPage } from './user-page';
 const App: React.FC = () => {
     const allMovies = useSelector((store: RootStoreT) => store.movies);
     const isUserAuth = true;
+    const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
 
     return (
         <>
@@ -45,7 +46,10 @@ const App: React.FC = () => {
                                     if (match) {
                                         const idMovie = Number(match.params.id);
                                         return allMovies.has(idMovie) ? (
-                                            <Movie {...allMovies.get(idMovie)} />
+                                            <Movie
+                                                {...allMovies.get(idMovie)}
+                                                isFavorite={favoriteMovies && favoriteMovies.includes(idMovie)}
+                                            />
                                         ) : (
                                             <div>такого фильма нет</div>
                                         );
