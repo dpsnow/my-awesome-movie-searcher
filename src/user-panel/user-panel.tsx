@@ -30,8 +30,8 @@ export const UserPanel = () => {
                 <Link to='/user'>
                     <MenuItem onClick={handleClose}>Profile</MenuItem>
                 </Link>
-                <MenuItem onClick={handleClose}>Settings</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={handleClose}>My list</MenuItem>
+                <MenuItem onClick={handleClose}>Log out</MenuItem>
             </Menu>
         </>
     );

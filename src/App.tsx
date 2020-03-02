@@ -7,6 +7,7 @@ import { Container } from '@material-ui/core';
 import { Footer, Header } from './components';
 import { Movies } from './movies';
 import { Movie } from './movie';
+import { UserPage } from './user-page';
 
 // type PrivateRoutePropsT = {
 //     path: string;
@@ -22,6 +23,7 @@ import { Movie } from './movie';
 
 const App: React.FC = () => {
     const allMovies = useSelector((store: RootStoreT) => store.movies);
+    const isUserAuth = true;
 
     return (
         <>
@@ -34,11 +36,8 @@ const App: React.FC = () => {
                                 <Movies />
                             </Route>
 
-                            <Route path='/login'>
-                                <div>login</div>
-                            </Route>
-
-                            <Route path='/user'>{true ? <div> страница юзера</div> : <Redirect to='/login' />}</Route>
+                            <Route path='/login'>{isUserAuth ? <Redirect to='/user' /> : <div>login</div>}</Route>
+                            <Route path='/user'>{isUserAuth ? <UserPage /> : <Redirect to='/login' />}</Route>
 
                             <Route
                                 path='/movie/:id'

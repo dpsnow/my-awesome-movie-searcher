@@ -31,7 +31,7 @@ export const Page = (props: any) => {
             <div>
                 <p>
                     <Button
-                        variant='contained'
+                        variant={isFavorite ? 'contained' : 'outlined'}
                         color={isFavorite ? 'secondary' : 'default'}
                         startIcon={<FavoriteIcon />}
                         onClick={onClickBtnFavorite}
