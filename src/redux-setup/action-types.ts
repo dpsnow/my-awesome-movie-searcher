@@ -1,3 +1,12 @@
-export const FETCH_MOVIES = '@@APP/ROOT/FETCH_MOVIES';
-export const SET_FAV_MOVIE = '@@APP/ROOT/SET_FAV_MOVIE';
+export const MOUNT_MOVIES = '@@APP/ROOT/PUT_MOVIES';
+export const MOUNT_USER_DATA = '@@APP/ROOT/FETCH_USER';
+
+export const CHANGE_FAV_MOVIE_STATUS = '@@APP/ROOT/CHANGE_FAV_MOVIE_STATUS';
+
 export const ADD_SEARCH = '@@APP/ROOT/ADD_SEARCH';
+
+// user
+export const CHANGE_MOVES_USER = '@@APP/ROOT/CHANGE_MOVES_USER';
+
+// saga
+export const SET_FAV_MOVIE_SAGA = '@@APP/ROOT/SET_FAV_MOVIE_SAGA';

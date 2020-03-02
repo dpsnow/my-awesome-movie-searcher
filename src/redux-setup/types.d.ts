@@ -45,6 +45,7 @@ type RootStoreT = {
         };
         last?: string[];
     };
+    user: any;
 };
 
 type Action<T> = { type: ActionsT; payload: T };

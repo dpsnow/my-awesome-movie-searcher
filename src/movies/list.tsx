@@ -1,25 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Typography, Grid } from '@material-ui/core';
-import { fetchMovies } from '../api';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { getAllMovies } from '../redux-setup';
+import { useSelector } from 'react-redux';
 import { selectDesiredMovies } from './selectors';
-
 import { Item } from './item';
 
 export const List = () => {
-    const dispatch = useDispatch();
-
-    // const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(store => store.movies);
-    const allMovies = useSelector<RootStoreT, any>(selectDesiredMovies);
-
-    console.log(allMovies);
-    useEffect(() => {
-        fetchMovies().then((movies: MoviesT) => {
-            dispatch(getAllMovies(movies));
-        });
-    }, [dispatch]);
+    const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(selectDesiredMovies);
+    const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
 
     return (
         <>
@@ -30,10 +17,11 @@ export const List = () => {
                 {allMovies &&
                     Array.from(allMovies.values()).map((item: any) => {
                         return (
-                            <Grid item xs={12} sm={6} md={4} key={item.id}>
+                            <Grid item xs={6} sm={3} md={2} key={item.id}>
                                 {/* TODO: исправить септку после стилизации под макет */}
                                 {/* <Grid item xs={6} sm={3} md={2} key={item.id}> */}
-                                <Item {...item} />
+                                {/* <Grid item xs={12} sm={6} md={4} key={item.id}> */}
+                                <Item {...item} isFavorite={favoriteMovies && favoriteMovies.includes(item.id)} />
                             </Grid>
                         );
                     })}
