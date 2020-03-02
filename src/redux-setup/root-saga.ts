@@ -49,7 +49,7 @@ function* changeMoviesLikes(action: any) {
     console.log('SAGA-changeMoviesLikes', action);
     const response = yield call(currentStatus ? apiMovies.removeLike : apiMovies.addLike, id);
 
-    if (response.type === 'success') {
+    if (response) {
         // TODO: добавлять их в список у юзера, (плюс переделать у самой карточки проверку избранного)
         yield put({
             type: CHANGE_MOVES_USER,
@@ -59,9 +59,10 @@ function* changeMoviesLikes(action: any) {
             type: CHANGE_FAV_MOVIE_STATUS,
             payload: id,
         });
-    } else {
-        console.log('Ошибка в запросе');
     }
+    // } else {
+    //     console.log('Ошибка в запросе');
+    // }
 }
 
 export function* rootSaga() {

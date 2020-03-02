@@ -22,5 +22,16 @@ export const createRequest = (url: string, method = 'GET', data = undefined) => 
             'Content-Type': 'application/json',
             Authorization: `Basic ${TOKEN}`,
         },
-    }).then(response => response.json());
+    })
+        .then(response => response.json())
+        .then(response => {
+            if (typeof response.type === 'undefined') {
+                return response;
+            }
+            if (response.type === 'success') {
+                return response;
+            } else {
+                throw Error('err');
+            }
+        });
 };
