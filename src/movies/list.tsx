@@ -6,6 +6,7 @@ import { Item } from './item';
 
 export const List = () => {
     const allMovies = useSelector<RootStoreT, Map<number, MovieT>>(selectDesiredMovies);
+    const favoriteMovies = useSelector((state: RootStoreT) => state.user.likes);
 
     return (
         <>
@@ -20,7 +21,7 @@ export const List = () => {
                                 {/* TODO: исправить септку после стилизации под макет */}
                                 {/* <Grid item xs={6} sm={3} md={2} key={item.id}> */}
                                 {/* <Grid item xs={12} sm={6} md={4} key={item.id}> */}
-                                <Item {...item} />
+                                <Item {...item} isFavorite={favoriteMovies && favoriteMovies.includes(item.id)} />
                             </Grid>
                         );
                     })}

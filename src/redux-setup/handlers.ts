@@ -50,13 +50,12 @@ export const changeFavoriteMovie = (state: RootStoreT, action: { payload: number
 };
 
 export const changeUsersMovies = (state: RootStoreT, action: { payload: number }) => {
-    console.log('changeUsersMovies');
     const idMovie: any = action.payload;
     const user = state.user;
-    const ind = user.likes && user.likes.indexOf(idMovie);
-    console.log(ind);
-    if (ind !== -1) {
-        user.likes.splice(ind, 1);
+    const indexMovie = user.likes && user.likes.indexOf(idMovie);
+
+    if (indexMovie !== -1) {
+        user.likes.splice(indexMovie, 1);
     } else {
         user.likes.push(idMovie);
     }

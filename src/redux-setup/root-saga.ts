@@ -66,6 +66,5 @@ function* changeMoviesLikes(action: any) {
 
 export function* rootSaga() {
     yield all([fork(loadUserInfo), fork(loadMovies)]);
-    yield takeLatest(SET_FAV_MOVIE_SAGA, changeMoviesLikes);
-    // yield takeEvery(CHANGE_FAV_MOVIE_STATUS, changeMoviesLikes);
+    yield takeEvery(SET_FAV_MOVIE_SAGA, changeMoviesLikes);
 }

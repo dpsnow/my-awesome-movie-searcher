@@ -18,5 +18,20 @@ const getDesiredMovies = (state: RootStoreT): MoviesT => {
     return state.movies;
 };
 
+const getUserFavoriteMovies = (state: RootStoreT): MoviesT => {
+    if (state.user.likes === undefined) return new Map();
+
+    const userFavoriteMoviesId = Array.from(state.user.likes);
+    if (userFavoriteMoviesId.length !== 0) {
+        const movies: any = Array.from(state.movies.values())
+            .filter((movie: any) => userFavoriteMoviesId.includes(movie.id))
+            .reduce((acc: any[], movie: MovieT) => acc.concat([[movie.id, movie]]), []);
+        return new Map(movies);
+    }
+
+    return new Map();
+};
+
 export const selectFavMovies = createSelector(getFavMovies, list => list);
 export const selectDesiredMovies = createSelector(getDesiredMovies, list => list);
+export const userFavoriteMovies = createSelector(getUserFavoriteMovies, list => list);

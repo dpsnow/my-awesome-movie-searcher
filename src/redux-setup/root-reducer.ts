@@ -1,11 +1,4 @@
-import {
-    MOUNT_MOVIES,
-    CHANGE_FAV_MOVIE_STATUS,
-    ADD_SEARCH,
-    MOUNT_USER_DATA,
-    SET_FAV_MOVIE_SAGA,
-    CHANGE_MOVES_USER,
-} from './action-types';
+import { MOUNT_MOVIES, CHANGE_FAV_MOVIE_STATUS, ADD_SEARCH, MOUNT_USER_DATA, CHANGE_MOVES_USER } from './action-types';
 import { mountMovies, changeFavoriteMovie, addSearchValues, mountUserData, changeUsersMovies } from './handlers';
 
 const initState: RootStoreT = {
