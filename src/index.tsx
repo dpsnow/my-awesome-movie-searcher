@@ -14,6 +14,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { rootReducer } from './redux-setup/root-reducer';
 import { rootSaga } from './redux-setup/root-saga';
+import { BrowserRouter } from 'react-router-dom';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -24,7 +25,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <App />
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root')
 );

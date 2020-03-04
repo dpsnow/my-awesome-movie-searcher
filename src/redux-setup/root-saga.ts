@@ -1,4 +1,4 @@
-import { all, fork, put, call, takeEvery } from 'redux-saga/effects';
+import { all, fork, put, call, takeEvery, takeLatest } from 'redux-saga/effects';
 import {
     MOUNT_MOVIES,
     MOUNT_USER_DATA,
@@ -24,13 +24,32 @@ function* loadUserInfo() {
     });
 }
 
+/*function* changeMoviesLikes(action: any) {
+    const { id, currentStatus } = action.payload;
+    let a;
+    if (!currentStatus) {
+        a = () => apiMovies.addLike(id);
+    } else {
+        a = () => apiMovies.removeLike(id);
+    }
+    // const a = () => apiMovies.addLike(payload);
+    yield call(a);
+
+    if (response) {
+        yield put({
+            type: CHANGE_FAV_MOVIE_STATUS,
+            payload: id,
+        });
+    }
+}*/
+
 function* changeMoviesLikes(action: any) {
     const { id, currentStatus } = action.payload;
 
     console.log('SAGA-changeMoviesLikes', action);
     const response = yield call(currentStatus ? apiMovies.removeLike : apiMovies.addLike, id);
 
-    if (response.type === 'success') {
+    if (response) {
         // TODO: добавлять их в список у юзера, (плюс переделать у самой карточки проверку избранного)
         yield put({
             type: CHANGE_MOVES_USER,
@@ -40,9 +59,10 @@ function* changeMoviesLikes(action: any) {
             type: CHANGE_FAV_MOVIE_STATUS,
             payload: id,
         });
-    } else {
-        console.log('Ошибка в запросе');
     }
+    // } else {
+    //     console.log('Ошибка в запросе');
+    // }
 }
 
 export function* rootSaga() {

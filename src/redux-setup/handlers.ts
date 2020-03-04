@@ -5,15 +5,46 @@ export const mountMovies = (state: RootStoreT, action: { payload: MoviesT }) => 
     };
 };
 
+/*export const changeFavoriteMovie = (
+    state: RootStoreT,
+    action: {
+        payload: { id: number; currentStatus: boolean };
+    }
+) => {
+    // console.log('redux: payload', action);
+
+    const movies = new Map(state.movies);
+    const targetMovie = movies.get(action.payload.id);
+
+    // console.log('redux: changeFavoriteMovie', movies);
+    // console.log('redux: changeFavoriteMovie', targetMovie);
+    if (targetMovie) {
+        // targetMovie.likes = targetMovie.likes === 0 ? 1 : 0;
+        targetMovie.isFavorite = !targetMovie.isFavorite;
+        movies.set(action.payload.id, targetMovie);
+    }
+
+    return { ...state, movies };
+    
+    // const movies = new Map(state.movies);
+    // const targetMovie = movies.get(action.payload);
+    // if (targetMovie) {
+    //     targetMovie.isFavorite = !targetMovie.isFavorite;
+    //     movies.set(action.payload, targetMovie);
+    // }
+    // return { ...state, movies };
+};*/
+
 export const changeFavoriteMovie = (state: RootStoreT, action: { payload: number }) => {
+    console.log('changeFavoriteMovie');
     const movies = new Map(state.movies);
     const targetMovie = movies.get(action.payload);
 
-    // переделать, криво меняется пропс
     if (targetMovie) {
         targetMovie.isFavorite = !targetMovie.isFavorite;
         movies.set(action.payload, targetMovie);
     }
+    console.log(targetMovie);
 
     return { ...state, movies };
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Menu, MenuItem } from '@material-ui/core';
 import { AccountCircle } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const UserPanel = () => {
     // TODO: WIP
@@ -26,9 +27,11 @@ export const UserPanel = () => {
             </Button>
             <Menu id='user-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleClose}>
                 {/* <MenuItem onClick={handleClose}>Profile</MenuItem> */}
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>Settings</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <Link to='/user'>
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                </Link>
+                <MenuItem onClick={handleClose}>My list</MenuItem>
+                <MenuItem onClick={handleClose}>Log out</MenuItem>
             </Menu>
         </>
     );
