@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css",
-    "main.js": "/my-awesome-movie-searcher/static/js/main.fa05ba74.chunk.js",
-    "main.js.map": "/my-awesome-movie-searcher/static/js/main.fa05ba74.chunk.js.map",
+    "main.js": "/my-awesome-movie-searcher/static/js/main.1500bde0.chunk.js",
+    "main.js.map": "/my-awesome-movie-searcher/static/js/main.1500bde0.chunk.js.map",
     "runtime-main.js": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js",
     "runtime-main.js.map": "/my-awesome-movie-searcher/static/js/runtime-main.8133b171.js.map",
-    "static/js/2.0ea7325d.chunk.js": "/my-awesome-movie-searcher/static/js/2.0ea7325d.chunk.js",
-    "static/js/2.0ea7325d.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.0ea7325d.chunk.js.map",
+    "static/js/2.710f1b37.chunk.js": "/my-awesome-movie-searcher/static/js/2.710f1b37.chunk.js",
+    "static/js/2.710f1b37.chunk.js.map": "/my-awesome-movie-searcher/static/js/2.710f1b37.chunk.js.map",
     "index.html": "/my-awesome-movie-searcher/index.html",
-    "precache-manifest.fac238fe1561882e1eca4e214901d92b.js": "/my-awesome-movie-searcher/precache-manifest.fac238fe1561882e1eca4e214901d92b.js",
+    "precache-manifest.2ffa0a10ac49777ba376915cf1ad6fd7.js": "/my-awesome-movie-searcher/precache-manifest.2ffa0a10ac49777ba376915cf1ad6fd7.js",
     "service-worker.js": "/my-awesome-movie-searcher/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/my-awesome-movie-searcher/static/css/main.69eda509.chunk.css.map",
-    "static/js/2.0ea7325d.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.0ea7325d.chunk.js.LICENSE"
+    "static/js/2.710f1b37.chunk.js.LICENSE": "/my-awesome-movie-searcher/static/js/2.710f1b37.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.8133b171.js",
-    "static/js/2.0ea7325d.chunk.js",
+    "static/js/2.710f1b37.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.fa05ba74.chunk.js"
+    "static/js/main.1500bde0.chunk.js"
   ]
 }
