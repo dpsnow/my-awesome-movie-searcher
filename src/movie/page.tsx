@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleStatusFavorite } from '../redux-setup';
+import { userFavoriteMovies } from '../movies/selectors';
+
+import { BASE_URL } from '../api/constants';
+
+import { Item } from '../movies/item';
+
 import { Button, Typography, Grid } from '@material-ui/core';
 import { Favorite as FavoriteIcon } from '@material-ui/icons';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleStatusFavorite } from '../redux-setup';
-import { Item } from '../movies/item';
-import { userFavoriteMovies } from '../movies/selectors';
 
 export const Page = (props: any) => {
     const dispatch = useDispatch();
-    const { posterPath, title, overview, id, isFavorite, voteAverage, voteCount } = props;
+    const { posterPath, title, overview, id, isFavorite, voteAverage, voteCount, genres } = props;
     const [disabledBtn, setDisabledBtn] = useState(false);
     const favoriteMovies = useSelector<RootStoreT, Map<number, MovieT>>(userFavoriteMovies);
 
@@ -24,35 +29,38 @@ export const Page = (props: any) => {
 
     return (
         <div>
-            <Typography variant='h3' component='h1'>
-                {title}
-            </Typography>
+            <Grid container alignItems='stretch' spacing={3}>
+                <Grid item xs={3}>
+                    <img src={`${BASE_URL}${posterPath}`} width='100%' alt={title} />
+                </Grid>
+                <Grid item xs={9}>
+                    <div>
+                        <Typography variant='h3' component='h1'>
+                            {title}
+                        </Typography>
+                    </div>
+                    <div>
+                        <p>
+                            <Button
+                                variant={isFavorite ? 'contained' : 'outlined'}
+                                color={isFavorite ? 'secondary' : 'default'}
+                                startIcon={<FavoriteIcon />}
+                                onClick={onClickBtnFavorite}
+                                disabled={disabledBtn}
+                            >
+                                {isFavorite ? 'In my list' : 'Add to my list'}
+                            </Button>
+                        </p>
+                        <p>
+                            <StarBorderRoundedIcon />
+                            {voteAverage} / 10 ({voteCount})
+                        </p>
+                        <p>{overview}</p>
+                        <p>{genres.map((genre: string) => `| ${genre} `)}|</p>
+                    </div>
+                </Grid>
+            </Grid>
 
-            <div>
-                <p>
-                    <Button
-                        variant={isFavorite ? 'contained' : 'outlined'}
-                        color={isFavorite ? 'secondary' : 'default'}
-                        startIcon={<FavoriteIcon />}
-                        onClick={onClickBtnFavorite}
-                        disabled={disabledBtn}
-                    >
-                        {isFavorite ? 'In my list' : 'Add to my list'}
-                    </Button>
-                    {/* <IconButton
-                    onClick={onClickBtnFavorite}
-                    color={isFavorite ? 'secondary' : 'default'}
-                    disabled={disabledBtn}
-                >
-                    <FavoriteIcon />
-                </IconButton>{' '} */}
-                </p>
-                <p>
-                    <StarBorderRoundedIcon />
-                    {voteAverage} / 10 ({voteCount})
-                </p>
-                <p>{overview}</p>
-            </div>
             <div>
                 <Typography variant='h5' component='h2'>
                     You Also might like

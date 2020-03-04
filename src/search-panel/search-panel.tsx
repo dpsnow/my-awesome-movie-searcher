@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { FormControl, Select, MenuItem } from '@material-ui/core';
-import { Search as SearchIcon } from '@material-ui/icons';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { addSearch } from '../redux-setup/actions';
-
 import { selectGenres } from './selectors';
+
+import { FormControl, Select, MenuItem } from '@material-ui/core';
+import { Search as SearchIcon } from '@material-ui/icons';
 
 export const SearchPanel = () => {
     const dispatch = useDispatch();
@@ -43,9 +43,6 @@ export const SearchPanel = () => {
                     })}
             </Select>
             {/* поиск по тексту */}
-
-            {/*<SearchIcon />
-            <TextField id='outlined-basic' label='Search…' variant='outlined' size='small' /> */}
 
             <input type='search' name='search' id='search' list='search-select' onBlur={handlerBlurSearch} />
 

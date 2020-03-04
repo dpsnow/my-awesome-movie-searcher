@@ -18,8 +18,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 const sagaMiddleware = createSagaMiddleware();
 
-// const store = createStore(rootReducer, undefined, composeWithDevTools(applyMiddleware(logger, sagaMiddleware)));
-const store = createStore(rootReducer, undefined, applyMiddleware(sagaMiddleware, logger));
+const store = createStore(rootReducer, undefined, composeWithDevTools(applyMiddleware(logger, sagaMiddleware)));
 
 sagaMiddleware.run(rootSaga);
 

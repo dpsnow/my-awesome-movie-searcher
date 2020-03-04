@@ -21,15 +21,13 @@ const actionHandler = new Map<string, any>([
     [
         'DEFAULT',
         (state: RootStoreT) => {
-            console.log('reducer DEFAULT');
+            console.warn('reducer DEFAULT');
             return { ...state };
-            // return initState;
         },
     ],
 ]);
 
 export function rootReducer(state = initState, action: Action<any>) {
-    console.log('rootReducer: action', action.type);
     const reducer = actionHandler.has(action.type) ? actionHandler.get(action.type) : actionHandler.get('DEFAULT');
     return reducer(state, action);
 }

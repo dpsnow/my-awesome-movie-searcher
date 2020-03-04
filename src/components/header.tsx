@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container, Grid, Paper, Typography, Box, Switch } from '@material-ui/core';
 
 import { Link } from 'react-router-dom';
 
 import { SearchPanel } from '../search-panel';
 import { UserPanel } from '../user-panel';
+
+import { Container, Grid, Paper, Typography, Box, Switch } from '@material-ui/core';
 
 export const Header = () => {
     return (

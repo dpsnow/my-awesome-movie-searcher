@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Menu, MenuItem, Typography, Grid } from '@material-ui/core';
-// import { AccountCircle } from '@material-ui/icons';
-// import { useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
+import React from 'react';
+import { Typography, Grid } from '@material-ui/core';
 
 export const Edit = () => {
     return (
